@@ -14,17 +14,17 @@ def unique_chars(word):
 	'''
 	charlist = []
 	
-	n=0
+	flag = True
 
 	for char in word:
 		if char not in charlist:
 			charlist.append(char)
 		elif char in charlist:
-			print False
+			flag = False
 
 	print charlist
 
-	print True
+	print flag
 
 unique_chars('appear')
 unique_chars('False')

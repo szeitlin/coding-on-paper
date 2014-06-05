@@ -20,15 +20,11 @@ def unique_chars(word):
 		if char not in charlist:
 			charlist.append(char)
 		elif char in charlist:
-			n +=1
+			print False
 
 	print charlist
 
-	if n>1:
-		print False
-	
-	elif n==0:
-		print True
+	print True
 
 unique_chars('appear')
 unique_chars('False')

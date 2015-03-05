@@ -1,40 +1,33 @@
 def str_comp(word):
-	''' char str --> char + num str
-	
-	returns a string compressed with counts for repeated chars.
+    ''' char str --> char + num str
 
-	>>>abc
-	abc
-	>>>aabcccaa
-	a2bc3a2
-	'''
-	#first, just count the characters
+    returns a string compressed with counts for repeated chars.
 
-	count = 1
-	countlist = []
-	for i in range(len(word)-1):
-		if word[i] == word[i+1]:
-		    count +=1
-		else:
-		    countlist.append(count)
-		    count = 1
-	
-	countlist.append(count) #kind of a hack
-	
-	#reformat to give back the character only if count = 1, else give back 
-	#character + count
+    >>>str_comp('abc')
+    abc
+    >>>str_comp('aabcccaa')
+    a2bc3a2
+    '''
 
-	comp = " "
-	for i in range(len(countlist)):
-		if countlist[i] ==1:
-		    comp += word[i]
-		else:
-		    comp += word[i] + str(countlist[i])
-	print comp
+    marker = ''
+    count = 1
+    out = ''
+
+    for char in word:
+        if marker != char:
+            marker = char
+            out = out + char + str(count)
+            count = 1
+        elif marker == char:
+            count +=1
+
+    out = out.replace('1','')
+
+    print out
 
 
 str_comp('abc')
 str_comp('aabcccaaa')
 
-				
-		
+
+

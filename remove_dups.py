@@ -9,12 +9,13 @@ def remove_dups(uns):
     '''
     unique = []
     for item in uns:
-	if item not in unique:
-	    unique.append(item)
-	else:
-	    continue
+        if item not in unique:
+            unique.append(item)
+        else:
+            continue
 
     print unique
 
-remove_dups([2,3,2,1,5,3,1])
+
+remove_dups([2, 3, 2, 1, 5, 3, 1])
 
